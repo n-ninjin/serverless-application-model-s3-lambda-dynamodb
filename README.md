@@ -25,8 +25,16 @@ Afterwards, the data is uploaded to the table in batches.
 
 ### 3. Running: SAM: Architecure: S3 -> AWS Lambda -> Amazon DynamoDB
 Json and Text files are read and stored data with fileName in DynamoDB
-#### 3.1 input file: txt and json
+#### 3.1 S3 
+#### 3.1.1 run api(file-upload-api)
+
+input file: txt and json
 <img width="1341" alt="image" src="https://user-images.githubusercontent.com/108375365/223263795-7e5def02-a7aa-4afd-b1e2-e3f4f2c7d7f7.png">
+
+#### 3.1.2 txt and json file uploaded
+**Amazon S3 Bucktets:** sam-s3-file-dynamodb-v3
+<img width="1374" alt="image" src="https://user-images.githubusercontent.com/108375365/223282037-966dca44-5893-405d-aed0-40da31ef1a26.png">
+
 
 #### 3.2 run fileUpload api from POSTMAN
 ##### json file
