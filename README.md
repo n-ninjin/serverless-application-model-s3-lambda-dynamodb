@@ -23,7 +23,8 @@ Afterwards, the data is uploaded to the table in batches.
 
 
 
-### 3. Json and Text files are read and stored data with fileName in DynamoDB
+### 3. S3 -> AMS Lambda -> Amazon DynamoDB
+Json and Text files are read and stored data with fileName in DynamoDB
 #### 3.1 input file: txt and json
 <img width="1341" alt="image" src="https://user-images.githubusercontent.com/108375365/223263795-7e5def02-a7aa-4afd-b1e2-e3f4f2c7d7f7.png">
 
