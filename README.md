@@ -11,11 +11,9 @@ Afterwards, the data is uploaded to the table in batches.
 <img width="862" alt="image" src="https://user-images.githubusercontent.com/108375365/223218052-3c4472a7-6729-4d3d-a40d-42d1b3ad399f.png">
 
 
-###  1.2 Created PUT request and run API (file-upload-api)
+###  1.2 Created PUT(file-upload-api) request on Postman
 <img width="842" alt="image" src="https://user-images.githubusercontent.com/108375365/223218184-10c94212-0e69-4853-9578-db66ed79373c.png">
 
-###  1.3 uploaded file on S3
-<img width="846" alt="image" src="https://user-images.githubusercontent.com/108375365/223218278-52eccf08-5754-403b-9cc7-529506bd7d36.png">
 
 ##  2. S3 ->Trigger-> AWS Lambda -> upload-> Amazon DynamoDB
 ### 2.1 Lambda (sam-lambda-dynamo-ninjin-v3-HelloWorldFunction)
