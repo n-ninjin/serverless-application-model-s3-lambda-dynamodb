@@ -15,13 +15,9 @@ Afterwards, the data is uploaded to the table in batches.
 <img width="842" alt="image" src="https://user-images.githubusercontent.com/108375365/223218184-10c94212-0e69-4853-9578-db66ed79373c.png">
 
 
-##  2. S3 ->Trigger-> AWS Lambda -> upload-> Amazon DynamoDB
+##  2. AWS Lambda
 ### 2.1 Lambda (sam-lambda-dynamo-ninjin-v3-HelloWorldFunction)
 <img width="845" alt="image" src="https://user-images.githubusercontent.com/108375365/223218434-17f68cce-d395-4b3d-bb26-1c5d2a0ab722.png">
-
-### 2.2 The file is read and stored in DynamoDB.
-#### Table
-<img width="851" alt="image" src="https://user-images.githubusercontent.com/108375365/223218561-95f6b4f3-4813-4d6e-95b4-025cc30e04b7.png">
 
 
 ### 3. Json and Text files are read and stored data with fileName in DynamoDB
