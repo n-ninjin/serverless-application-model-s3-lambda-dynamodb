@@ -45,6 +45,7 @@ Json and Text files are read and stored data with fileName in DynamoDB
 
 **DynamoDB table**: sam-lambda-dynamo-ninjin-v3-DDBtable
 <img width="1261" alt="image" src="https://user-images.githubusercontent.com/108375365/223280508-f994e3d8-2281-4613-9f93-8b1fc7b28979.png">
+<img width="1230" alt="image" src="https://user-images.githubusercontent.com/108375365/223281640-0a42553e-dd3b-45c2-98f4-ba7cbd94a7be.png">
 
 
 
