@@ -43,7 +43,7 @@ Json and Text files are read and stored data with fileName in DynamoDB
    
 3. Afterwards, the data is uploaded to the table in batches.
 
-DynamoDB table: sam-lambda-dynamo-ninjin-v3-DDBtable
+**DynamoDB table**: sam-lambda-dynamo-ninjin-v3-DDBtable
 <img width="1261" alt="image" src="https://user-images.githubusercontent.com/108375365/223280508-f994e3d8-2281-4613-9f93-8b1fc7b28979.png">
 
 
