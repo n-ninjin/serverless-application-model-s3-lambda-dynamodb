@@ -73,6 +73,7 @@ Build your application with the `sam build` command.
 ```bash
 sam-ninjin-2023$ sam build
 ```
+<img width="861" alt="image" src="https://user-images.githubusercontent.com/108375365/223218854-12b03083-e6d8-4648-92f5-b1b3c359c6b9.png">
 
 The SAM CLI builds a docker image from a Dockerfile and then installs dependencies defined in `hello-world/package.json` inside the docker image. The processed template file is saved in the `.aws-sam/build` folder.
 * **Note**: The Dockerfile included in this sample application uses `npm install` by default. If you are building your code for production, you can modify it to use `npm ci` instead.
