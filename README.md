@@ -39,7 +39,9 @@ Json and Text files are read and stored data with fileName in DynamoDB
 1. The Lambda function is triggered by S3 when files are saved. 
 
 2. The function then reads the S3 object and converts the content, whether it is TXT or JSON.
+
   ##### 2.1 (**txt-file-20230306_200.txt**)
+  
   ##### 2.2 (**json-file-20230306_300.json**)
    
 into a suitable format for the DynamoDB table(sam-lambda-dynamo-ninjin-v3-DDBtable). 
