@@ -38,9 +38,10 @@ Afterwards, the data is uploaded to the table in batches.
 <img width="1176" alt="image" src="https://user-images.githubusercontent.com/108375365/223265417-d8cff848-4148-48fc-91e3-51aa6d0d0493.png">
 
 #### 3.3 after DynamoDB
-The Lambda function is triggered by S3 when files are saved. 
-The function then reads the S3 object and converts the content, whether it is TXT(txt-file-20230306_200.txt) or JSON(json-file-20230306_300.json), 
-into a suitable format for the DynamoDB table(sam-lambda-dynamo-ninjin-v3-DDBtable). Afterwards, the data is uploaded to the table in batches.
+1. The Lambda function is triggered by S3 when files are saved. 
+2. The function then reads the S3 object and converts the content, whether it is TXT(txt-file-20230306_200.txt) or JSON(json-file-20230306_300.json), 
+into a suitable format for the DynamoDB table(sam-lambda-dynamo-ninjin-v3-DDBtable). 
+3. Afterwards, the data is uploaded to the table in batches.
 
 
 
