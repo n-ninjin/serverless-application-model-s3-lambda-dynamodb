@@ -4,7 +4,7 @@ The Lambda function is triggered by S3 when files are saved.
 The function then reads the S3 object and converts the content, whether it is Text or JSON, into a suitable format for the DynamoDB table. 
 Afterwards, the data is uploaded to the table in batches.
 
-## 1. Amazon API Gateway : file-upload-api(PUT) 
+## 1. Amazon API Gateway : file-upload-api(PUT) | PostMan
 
 ### 1.1 API Gateway(file-upload-api)
 ###  API Gateway
