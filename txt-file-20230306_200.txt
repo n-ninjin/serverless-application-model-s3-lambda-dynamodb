@@ -1,0 +1,10 @@
+[
+  {
+    "fileTye": "txt",
+    "employeeId": 500501,
+    "name": "Sonya",
+    "job": "Software Engineer",
+    "age": "21",
+    "address": "CA"
+  }
+]

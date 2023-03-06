@@ -1,49 +1,8 @@
 [
   {
-    "employeeId": 200,
+    "fileTye": "json",
+    "employeeId": 300301,
     "name": "Owen",
-    "job": "Senior Software Engineer",
-    "age": "25",
-    "address": "DC"
-  },
-  {
-    "employeeId": 201,
-    "name": "Haaland",
-    "job": "Senior Software Engineer",
-    "age": "25",
-    "address": "DC"
-  },
-  {
-    "employeeId": 202,
-    "name": "Henry",
-    "job": "Senior Software Engineer",
-    "age": "25",
-    "address": "DC"
-  },
-  {
-    "employeeId": 203,
-    "name": "Torres",
-    "job": "Senior Software Engineer",
-    "age": "25",
-    "address": "DC"
-  },
-  {
-    "employeeId": 204,
-    "name": "Messi",
-    "job": "Senior Software Engineer",
-    "age": "25",
-    "address": "DC"
-  },
-  {
-    "employeeId": 205,
-    "name": "Ronaldo",
-    "job": "Senior Software Engineer",
-    "age": "25",
-    "address": "DC"
-  },
-  {
-    "employeeId": 206,
-    "name": "Kaka",
     "job": "Senior Software Engineer",
     "age": "25",
     "address": "DC"
