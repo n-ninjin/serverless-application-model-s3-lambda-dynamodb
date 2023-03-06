@@ -1,4 +1,4 @@
-# File is uploaded to S3, then trigger is reads the file and data is uploaded from S3 to Amazon DynamoDB
+# Serverless Application Model(SAM): File is uploaded to S3, then trigger is reads the file and data is uploaded from S3 to Amazon DynamoDB
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/108375365/223217724-51c26ca2-eb39-490c-a6da-51d7f84a6ae7.png">
 When the files are saved, S3 invokes the main Lambda function. The function reads the S3 files and put into DynamoDB table.
 
