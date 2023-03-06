@@ -1,6 +1,8 @@
 # Serverless Application Model(SAM): File is uploaded to S3, then trigger is reads the file and data is uploaded from S3 to Amazon DynamoDB
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/108375365/223217724-51c26ca2-eb39-490c-a6da-51d7f84a6ae7.png">
-When the files are saved, S3 invokes the main Lambda function. The function reads the S3 files and put into DynamoDB table.
+The Lambda function is triggered by S3 when files are saved. 
+The function then reads the S3 object and converts the content, whether it is Text or JSON, into a suitable format for the DynamoDB table. 
+Afterwards, the data is uploaded to the table in batches.
 
 ## 1. File is uploaded to S3
 
@@ -23,8 +25,26 @@ When the files are saved, S3 invokes the main Lambda function. The function read
 #### Table
 <img width="851" alt="image" src="https://user-images.githubusercontent.com/108375365/223218561-95f6b4f3-4813-4d6e-95b4-025cc30e04b7.png">
 
-#### Input file 2.3 The Json is read and stored data with fileName in DynamoDB
-<img width="848" alt="image" src="https://user-images.githubusercontent.com/108375365/223218672-56b91871-4202-4840-be5a-4d4f4f02c974.png">
+
+### 3. Json and Text files are read and stored data with fileName in DynamoDB
+#### 3.1 input file: txt and json
+<img width="1341" alt="image" src="https://user-images.githubusercontent.com/108375365/223263795-7e5def02-a7aa-4afd-b1e2-e3f4f2c7d7f7.png">
+
+#### 3.2 run fileUpload api from POSTMAN
+##### json file
+<img width="1192" alt="image" src="https://user-images.githubusercontent.com/108375365/223264802-fe7207a5-21dc-467b-8a26-6b7ef5ab121a.png">
+
+##### txt file
+<img width="1176" alt="image" src="https://user-images.githubusercontent.com/108375365/223265417-d8cff848-4148-48fc-91e3-51aa6d0d0493.png">
+
+#### 3.3 after DynamoDB
+The Lambda function is triggered by S3 when files are saved. 
+The function then reads the S3 object and converts the content, whether it is TXT(txt-file-20230306_200.txt) or JSON(json-file-20230306_300.json), 
+into a suitable format for the DynamoDB table(sam-lambda-dynamo-ninjin-v3-DDBtable). Afterwards, the data is uploaded to the table in batches.
+
+
+
+
 
 # Project Environment Set-up
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
