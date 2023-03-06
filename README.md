@@ -1,6 +1,32 @@
 # File is uploaded to S3, then trigger is reads the file and data is uploaded from S3 to Amazon DynamoDB
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/108375365/223217724-51c26ca2-eb39-490c-a6da-51d7f84a6ae7.png">
+When the files are saved, S3 invokes the main Lambda function. The function reads the S3 files and put into DynamoDB table.
 
+## 1. File is uploaded to S3
+
+### 1.1 API Gateway(file-upload-api)
+###  API Gateway
+<img width="862" alt="image" src="https://user-images.githubusercontent.com/108375365/223218052-3c4472a7-6729-4d3d-a40d-42d1b3ad399f.png">
+
+
+###  1.2 Created PUT request and run API (file-upload-api)
+<img width="842" alt="image" src="https://user-images.githubusercontent.com/108375365/223218184-10c94212-0e69-4853-9578-db66ed79373c.png">
+
+###  1.3 uploaded file on S3
+<img width="846" alt="image" src="https://user-images.githubusercontent.com/108375365/223218278-52eccf08-5754-403b-9cc7-529506bd7d36.png">
+
+##  2. S3 ->Trigger-> AWS Lambda -> upload-> Amazon DynamoDB
+### 2.1 Lambda (sam-lambda-dynamo-ninjin-v3-HelloWorldFunction)
+<img width="845" alt="image" src="https://user-images.githubusercontent.com/108375365/223218434-17f68cce-d395-4b3d-bb26-1c5d2a0ab722.png">
+
+### 2.2 The file is read and stored in DynamoDB.
+#### Table
+<img width="851" alt="image" src="https://user-images.githubusercontent.com/108375365/223218561-95f6b4f3-4813-4d6e-95b4-025cc30e04b7.png">
+
+#### Input file 2.3 The Json is read and stored data with fileName in DynamoDB
+<img width="848" alt="image" src="https://user-images.githubusercontent.com/108375365/223218672-56b91871-4202-4840-be5a-4d4f4f02c974.png">
+
+# Project Environment Set-up
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - hello-world - Code for the application's Lambda function and Project Dockerfile.
