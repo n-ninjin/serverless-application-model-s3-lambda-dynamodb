@@ -7,13 +7,10 @@ Afterwards, the data is uploaded to the table in batches.
 ## 1. Created Amazon API Gateway : file-upload-api(PUT) | PostMan
 
 ### 1.1 API Gateway(file-upload-api)
-###  API Gateway
 <img width="862" alt="image" src="https://user-images.githubusercontent.com/108375365/223218052-3c4472a7-6729-4d3d-a40d-42d1b3ad399f.png">
-
 
 ###  1.2 Created PUT(file-upload-api) request on Postman
 <img width="842" alt="image" src="https://user-images.githubusercontent.com/108375365/223218184-10c94212-0e69-4853-9578-db66ed79373c.png">
-
 
 ##  2. Created AWS Lambda
 ### 2.1 Lambda (sam-lambda-dynamo-ninjin-v3-HelloWorldFunction)
@@ -53,7 +50,6 @@ Afterwards, the data is uploaded to the table in batches.
 **DynamoDB table**: sam-lambda-dynamo-ninjin-v3-DDBtable
 <img width="1261" alt="image" src="https://user-images.githubusercontent.com/108375365/223280508-f994e3d8-2281-4613-9f93-8b1fc7b28979.png">
 <img width="1230" alt="image" src="https://user-images.githubusercontent.com/108375365/223281640-0a42553e-dd3b-45c2-98f4-ba7cbd94a7be.png">
-
 
 
 ## Project Environment Set-up
