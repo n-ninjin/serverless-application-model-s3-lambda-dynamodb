@@ -1,5 +1,6 @@
 'use strict'
 
+// Import the AWS SDK
 const AWS = require('aws-sdk')
 
 // Set AWS region based on environment variable
@@ -13,30 +14,37 @@ const docClient = new AWS.DynamoDB.DocumentClient()
 const { v4: uuidv4 } = require('uuid')
 
 // Get DynamoDB table name from environment variable
-const ddbTable = process.env.DDBtable
+const dynamoDbTableName = process.env.DDBtable
 
 // The Lambda handler
 exports.handler = async (event) => {
-  console.log (JSON.stringify(event, null, 2))
-  console.log('Using DynamoDB table:', ddbTable)
+  // Log the incoming event
+  console.log(JSON.stringify(event, null, 2))
+
+  // Log the DynamoDB table name
+  console.log('Using DynamoDB table:', dynamoDbTableName)
 
   // Loop through each record in the incoming S3 event
   await Promise.all(
     event.Records.map(async (record) => {
       try {
+        // Log the incoming record
         console.log('Incoming record: ', record)
 
-        // Get original text from object in incoming event
+        // Get the original text from the S3 object in the incoming event
         const originalText = await s3.getObject({
           Bucket: record.s3.bucket.name,
           Key: record.s3.object.key // Set S3FileKey parameter from record
         }).promise()
 
-        // Upload JSON to DynamoDB
+        // Parse the original text as JSON
         const jsonData = JSON.parse(originalText.Body.toString('utf-8'))
-        await ddbLoader(jsonData, record.s3.object.key) // Pass S3FileKey parameter to ddbLoader
+
+        // Call the ddbLoader function to upload the JSON data to DynamoDB
+        await uploadJsonToDynamoDb(jsonData, record.s3.object.key) // Pass S3FileKey parameter to ddbLoader
 
       } catch (err) {
+        // Log any errors
         console.error(err)
       }
     })
@@ -44,8 +52,8 @@ exports.handler = async (event) => {
 }
 
 // Load JSON data to DynamoDB table
-const ddbLoader = async (data, s3FileKey) => {
-  // Separate into batches for upload
+const uploadJsonToDynamoDb = async (data, s3FileKey) => {
+  // Separate the data into batches for upload
   let batches = []
   const BATCH_SIZE = 30
 
@@ -53,11 +61,13 @@ const ddbLoader = async (data, s3FileKey) => {
     batches.push(data.splice(0, BATCH_SIZE))
   }
 
+  // Log the number of batches
   console.log(`Total batches: ${batches.length}`)
 
+  // Initialize the batch counter
   let batchCount = 0
 
-  // Save each batch
+  // Save each batch to DynamoDB
   await Promise.all(
     batches.map(async (item_data) => {
 
@@ -65,23 +75,23 @@ const ddbLoader = async (data, s3FileKey) => {
       const params = {
         RequestItems: {}
       }
-      params.RequestItems[ddbTable] = []
+      params.RequestItems[dynamoDbTableName] = []
   
       // Loop through each item in the batch
       item_data.forEach(item => {
+        // Remove any empty string values from the item
         for (let key of Object.keys(item)) {
-          // An AttributeValue may not contain an empty string
           if (item[key] === '') 
             delete item[key]
         }
 
-        // Build params for item
-        params.RequestItems[ddbTable].push({
+        // Build the params object for the item
+        params.RequestItems[dynamoDbTableName].push({
           PutRequest: {
             Item: {
-              ID: uuidv4(), // Generate unique identifier for item
-              S3FileKey: s3FileKey, // Add S3 file path
-              ...item // Add all properties from item to DynamoDB item
+              ID: uuidv4(), // Generate a unique ID for the item
+              S3FileKey: s3FileKey, // Add the S3 file path to the item
+              ...item // Add all properties from the item to the DynamoDB item
             }
           }
         })
@@ -94,7 +104,7 @@ const ddbLoader = async (data, s3FileKey) => {
         const result = await docClient.batchWrite(params).promise()
         console.log('Success: ', result)
       } catch (err) {
-        console.error('Error: ', err)
+        console.error('Error message: ', err)
       }
     })
   )
