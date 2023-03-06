@@ -45,8 +45,7 @@ into a suitable format for the DynamoDB table(sam-lambda-dynamo-ninjin-v3-DDBtab
 
 
 
-
-# Project Environment Set-up
+## Project Environment Set-up
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - hello-world - Code for the application's Lambda function and Project Dockerfile.
