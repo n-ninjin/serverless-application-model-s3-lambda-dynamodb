@@ -28,13 +28,13 @@ exports.handler = async (event) => {
 
         // Get original text from object in incoming event
         const originalText = await s3.getObject({
-          Bucket: event.Records[0].s3.bucket.name,
-          Key: event.Records[0].s3.object.key
+          Bucket: record.s3.bucket.name,
+          Key: record.s3.object.key // Set S3FileKey parameter from record
         }).promise()
 
         // Upload JSON to DynamoDB
         const jsonData = JSON.parse(originalText.Body.toString('utf-8'))
-        await ddbLoader(jsonData)
+        await ddbLoader(jsonData, record.s3.object.key) // Pass S3FileKey parameter to ddbLoader
 
       } catch (err) {
         console.error(err)
@@ -44,7 +44,7 @@ exports.handler = async (event) => {
 }
 
 // Load JSON data to DynamoDB table
-const ddbLoader = async (data) => {
+const ddbLoader = async (data, s3FileKey) => {
   // Separate into batches for upload
   let batches = []
   const BATCH_SIZE = 30
@@ -80,6 +80,7 @@ const ddbLoader = async (data) => {
           PutRequest: {
             Item: {
               ID: uuidv4(), // Generate unique identifier for item
+              S3FileKey: s3FileKey, // Add S3 file path
               ...item // Add all properties from item to DynamoDB item
             }
           }
