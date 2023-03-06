@@ -43,6 +43,7 @@ Afterwards, the data is uploaded to the table in batches.
 into a suitable format for the DynamoDB table(sam-lambda-dynamo-ninjin-v3-DDBtable). 
 3. Afterwards, the data is uploaded to the table in batches.
 
+<img width="1212" alt="image" src="https://user-images.githubusercontent.com/108375365/223270305-772fa9c0-89e3-42d1-a7b5-c29a39bde23d.png">
 
 
 
