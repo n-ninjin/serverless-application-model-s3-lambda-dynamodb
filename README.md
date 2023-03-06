@@ -1,4 +1,4 @@
-# Serverless Application Model(SAM): File is uploaded to S3, then trigger is reads the file and data is uploaded from S3 to Amazon DynamoDB
+# Serverless Application Model(SAM): Architecure: S3 -> AWS Lambda -> Amazon DynamoDB
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/108375365/223217724-51c26ca2-eb39-490c-a6da-51d7f84a6ae7.png">
 The Lambda function is triggered by S3 when files are saved. 
 The function then reads the S3 object and converts the content, whether it is Text or JSON, into a suitable format for the DynamoDB table. 
