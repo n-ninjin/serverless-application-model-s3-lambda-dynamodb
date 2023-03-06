@@ -1,4 +1,5 @@
-# sam-ninjin-2023
+# File is uploaded to S3, then trigger is reads the file and data is uploaded from S3 to Amazon DynamoDB
+<img width="850" alt="image" src="https://user-images.githubusercontent.com/108375365/223217724-51c26ca2-eb39-490c-a6da-51d7f84a6ae7.png">
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
