@@ -14,7 +14,7 @@ const docClient = new AWS.DynamoDB.DocumentClient()
 const { v4: uuidv4 } = require('uuid')
 
 // Get DynamoDB table name from environment variable
-const dynamoDbTableName = process.env.DDBtable
+const dynamoDbTableName = process.env.DynamoTable
 
 // The Lambda handler
 exports.handler = async (event) => {

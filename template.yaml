@@ -15,7 +15,7 @@ Resources:
     Properties:
       BucketName: 'sam-s3-file-dynamodb-v3'
 
-  DDBtable:
+  DynamoTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
@@ -36,11 +36,11 @@ Resources:
       MemorySize: 512
       Environment:
         Variables:
-          DDBtable: !Ref DDBtable
+          DynamoTable: !Ref DynamoTable
           AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
       Policies:
         - DynamoDBCrudPolicy:
-            TableName: !Ref DDBtable
+            TableName: !Ref DynamoTable
         - S3CrudPolicy:
             BucketName: 'sam-s3-file-upload-v2'
       Events:
