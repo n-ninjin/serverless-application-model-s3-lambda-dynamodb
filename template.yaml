@@ -64,3 +64,13 @@ Resources:
                 Rules:
                   - Name: suffix
                     Value: '.txt'
+        FileUploadCSV:
+          Type: S3
+          Properties:
+            Bucket: !Ref InputS3Bucket
+            Events: s3:ObjectCreated:*
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: suffix
+                    Value: '.csv'

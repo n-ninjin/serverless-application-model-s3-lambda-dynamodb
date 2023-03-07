@@ -45,7 +45,8 @@ exports.handler = async (event) => {
 
           // Call the uploadTextToDynamoDb function to upload the text data to DynamoDB
           await uploadTextToDynamoDb(originalText.Body.toString('utf-8'), record.s3.object.key) // Pass S3FileKey parameter to uploadTextToDynamoDb
-        } else {
+        } 
+        else {
           console.log('FileUpload JSON: ', event.eventName )
           // JSON
           // Get the original text from the S3 object in the incoming event
@@ -194,3 +195,22 @@ const uploadTextToDynamoDb = async (data, s3FileKey) => {
     })
   )
 }
+
+
+/**
+Note:
+This is an AWS Lambda function in Node.js that listens to S3 events and uploads the contents of 
+uploaded text or JSON files to a DynamoDB table. The function uses the AWS SDK to interact with S3 and DynamoDB.
+The function first sets the AWS region and initializes S3 and DynamoDB clients. It then generates a unique identifier 
+using the UUID library and retrieves the name of the DynamoDB table from an environment variable.
+
+When a file is uploaded to S3, the function is triggered and a loop is started to process each record in the incoming S3 event. 
+The function checks if the uploaded file is a text or JSON file based on the file extension. For text files, the function splits 
+the file contents into lines and batches the lines for upload to DynamoDB. For JSON files, the function parses the JSON data and 
+batches the items for upload to DynamoDB.
+
+In both cases, the function removes any empty string values from the items and generates a unique identifier for each item.
+The function then creates a DynamoDB batch write request with the items and uploads the request to DynamoDB. The batch size is 
+limited to 30 items.The function logs the incoming event, the DynamoDB table name, and the progress of the batch writes. 
+Any errors that occur during the process are also logged.
+ */
