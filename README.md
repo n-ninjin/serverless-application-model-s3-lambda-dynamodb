@@ -10,7 +10,7 @@ Afterwards, the data is uploaded to the DynamoDB table in batches.
 <img width="862" alt="image" src="https://user-images.githubusercontent.com/108375365/223218052-3c4472a7-6729-4d3d-a40d-42d1b3ad399f.png">
 
 ###  1.2 Created PUT(file-upload-api) request on Postman
-<img width="842" alt="image" src="https://user-images.githubusercontent.com/108375365/223218184-10c94212-0e69-4853-9578-db66ed79373c.png">
+<img width="1352" alt="image" src="https://user-images.githubusercontent.com/108375365/223301251-c8b1cc8b-ddaa-409b-85bd-18ba16584e4e.png">
 
 ##  2. Created AWS Lambda
 ### 2.1 Lambda (sam-lambda-dynamo-ninjin-v3-HelloWorldFunction)
