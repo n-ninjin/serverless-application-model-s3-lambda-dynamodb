@@ -14,9 +14,7 @@ Afterwards, the data is uploaded to the DynamoDB table in batches.
 
 ##  2. Created AWS Lambda
 ### 2.1 Lambda (sam-lambda-dynamo-ninjin-v3-HelloWorldFunction)
-<img width="835" alt="image" src="https://user-images.githubusercontent.com/108375365/223279385-07b58e47-7679-4bfe-8071-f5f406a31079.png">
-
-<img width="940" alt="image" src="https://user-images.githubusercontent.com/108375365/223279268-9133df59-cb8b-44cb-9908-04935600b6af.png">
+<img width="1356" alt="image" src="https://user-images.githubusercontent.com/108375365/223301525-ad823a1a-7d8e-49f8-bb53-dc6898c61f7f.png">
 
 
 ### 3. Running: SAM: Architecure: S3 -> AWS Lambda -> Amazon DynamoDB
