@@ -10,7 +10,7 @@ Globals:
     MemorySize: 128
 
 Resources:
-  InputS3Bucket:
+  S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: 'sam-s3-file-dynamodb-v3'
@@ -47,7 +47,7 @@ Resources:
         FileUpload:
           Type: S3
           Properties:
-            Bucket: !Ref InputS3Bucket
+            Bucket: !Ref S3Bucket
             Events: s3:ObjectCreated:*
             Filter: 
               S3Key:
@@ -57,7 +57,7 @@ Resources:
         FileUploadTXT:
           Type: S3
           Properties:
-            Bucket: !Ref InputS3Bucket
+            Bucket: !Ref S3Bucket
             Events: s3:ObjectCreated:*
             Filter:
               S3Key:
@@ -67,7 +67,7 @@ Resources:
         FileUploadCSV:
           Type: S3
           Properties:
-            Bucket: !Ref InputS3Bucket
+            Bucket: !Ref S3Bucket
             Events: s3:ObjectCreated:*
             Filter:
               S3Key:
