@@ -25,6 +25,7 @@ Afterwards, the data is uploaded to the DynamoDB table in batches.
 
 #### 3.1.1input file: txt and json
 <img width="1341" alt="image" src="https://user-images.githubusercontent.com/108375365/223263795-7e5def02-a7aa-4afd-b1e2-e3f4f2c7d7f7.png">
+<img width="1263" alt="image" src="https://user-images.githubusercontent.com/108375365/223301064-388daefc-49dd-4b2f-81ec-65d497012cf1.png">
 
 #### 3.1.2 run fileUpload api from POSTMAN
 
